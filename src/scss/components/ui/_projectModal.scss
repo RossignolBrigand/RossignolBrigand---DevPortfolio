@@ -1,0 +1,102 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+@use '../../abstracts/animations' as *;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+
+    .modal-wrapper {
+        width: 80vw;
+        height: 80vh;
+        padding: 1.5rem;
+        background-color: v.$tertiary-color;
+        border: 1px solid #00000088;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInFromTop 250ms ease-in;
+
+        @include m.respond-to('tablet') {
+            width: 90vw;
+            height: 90vh;
+        }
+        @include m.respond-to('mobile') {
+            width: 100svw;
+            height: 100svh;
+        }
+
+        .modal-topbar {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 1rem;
+
+            .btn-close-modal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include m.icon-size-medium;
+            }
+        }
+
+        .modal-content {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            overflow-y: auto;
+
+            &__carousel {
+                width: 100%;
+                height: 400px;
+                max-height: 40%;
+                margin-bottom: 2rem;
+                padding: 1rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                    object-fit: cover;
+                }
+            }
+
+            &__text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+                padding: 2rem;
+
+                &--title {
+                    margin-bottom: 1rem;
+                }
+                h2 {
+                    margin-bottom: 2rem;
+                    width: auto;
+                }
+                p {
+                    margin-bottom: 1.5rem;
+                }
+
+                .tags-wrapper {
+                    margin-top: 0.5rem;
+                }
+            }
+            &__links {
+                display: flex;
+                margin-top: auto;
+                margin: 2rem;
+                gap: 2rem;
+            }
+        }
+    }
+}

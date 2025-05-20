@@ -1,0 +1,63 @@
+@use '../../abstracts/animations' as *;
+@use '../../abstracts/mixins' as m;
+
+.card-wrapper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    gap: 1rem;
+    box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    filter: grayscale(0.8);
+    transition: all 250ms ease;
+    @include m.respond-to('tablet') {
+        filter: grayscale(0);
+    }
+    @include m.respond-to('mobile') {
+        gap: 0.5rem;
+    }
+
+    &:hover {
+        box-shadow:
+            rgba(50, 50, 93, 0.3) 0px 30px 60px -12px,
+            rgba(0, 0, 0, 0.35) 0px 18px 36px -18px;
+        filter: grayscale(0);
+    }
+
+    .card-image {
+        max-width: 100%;
+        height: 400px;
+        border-radius: 8px 8px 0 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+    }
+
+    .card-content {
+        width: 100%;
+        padding: 1rem;
+
+        p {
+            margin-bottom: 2rem;
+        }
+        .tags-wrapper {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+    }
+
+    &.visible {
+        animation-name: fadeInCard;
+        animation-duration: 1000ms;
+        animation-iteration-count: 1;
+    }
+}

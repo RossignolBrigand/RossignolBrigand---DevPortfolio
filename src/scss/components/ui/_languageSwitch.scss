@@ -1,0 +1,36 @@
+@use '../../abstracts/typography' as t;
+@use '../../abstracts/variables' as v;
+
+.custom-language-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    span {
+        color: white;
+        font-family: t.$font-title;
+    }
+    label.visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+}
+
+.translation-button {
+    border: 2px solid v.$font-white;
+    min-width: fit-content;
+    padding: 0 0.5rem;
+    background-color: transparent;
+    font-size: 1rem;
+
+    & option {
+        background-color: v.$font-white;
+        color: v.$font-black;
+    }
+}

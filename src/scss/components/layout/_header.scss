@@ -1,0 +1,41 @@
+@use "../../abstracts/variables" as v;
+@use "../../abstracts/mixins" as m;
+
+header {
+	position: sticky;
+	z-index: 1000;
+	top: 0;
+	height: auto;
+	width: 100%;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	color: white;
+	align-items: center;
+	justify-content: space-between;
+	background-color: v.$color_black;
+	transition: all 0.3s ease-in-out;
+
+	.header-title {
+		display: flex;
+		flex-direction: column;
+
+		h1 {
+			text-transform: uppercase;
+			margin: 0;
+		}
+	}
+
+	.header-content {
+		display: flex;
+		gap: 1rem;
+
+		nav {
+			gap: 0.5rem;
+
+			@include m.respond-to("tablet") {
+				order: 2;
+			}
+		}
+	}
+}

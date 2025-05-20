@@ -1,0 +1,138 @@
+@use './variables' as v;
+@use './functions' as f;
+@use './mixins' as m;
+@use 'sass:map';
+
+//Fonts
+$font_body: 'Montserrat', 'Courier New', Courier, monospace;
+$font_title: 'Montserrat', Arial, sans-serif;
+$font_code: 'Monospace';
+$font_sizes: (
+    xxsmall: f.rem(4),
+    xsmall: f.rem(8),
+    small: f.rem(12),
+    medium: f.rem(16),
+    large: f.rem(20),
+    xlarge: f.rem(28),
+    xxlarge: f.rem(40),
+    xxxlarge: f.rem(60),
+    xxxxlarge: f.rem(100),
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font_title;
+    text-wrap: stable;
+}
+
+p,
+li,
+span,
+input,
+em,
+strong {
+    font-family: $font_body;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    width: fit-content;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: map.get($font_sizes, 'xxlarge');
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    @include m.respond-to('tablet') {
+        font-size: map.get($font_sizes, 'xlarge');
+    }
+}
+
+h2 {
+    font-size: map.get($font_sizes, 'xlarge');
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: map.get($font_sizes, 'large');
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+a,
+a:visited,
+a:active {
+    font-size: map.get($font_sizes, 'xlarge');
+    font-family: $font_title;
+    text-decoration: none;
+    color: inherit;
+
+    @include m.respond-to('laptop') {
+        font-size: map.get($font_sizes, 'large');
+    }
+    @include m.respond-to('tablet') {
+        font-size: map.get($font_sizes, 'medium');
+    }
+
+    &:hover {
+        font-weight: 600;
+    }
+}
+
+select,
+option,
+button {
+    color: inherit;
+    font-family: $font_title;
+    font-size: map.get($font-sizes, 'medium');
+
+    @include m.respond-to('mobile') {
+        font-size: map.get($font-sizes, 'small');
+    }
+}
+
+p,
+span {
+    font-size: map.get($font-sizes, 'medium');
+    color: v.$font-black;
+
+    @include m.respond-to('tablet') {
+        font-size: map.get($font-sizes, 'small');
+    }
+}
+
+em,
+strong {
+    font-size: map.get($font-sizes, 'large');
+
+    @include m.respond-to('tablet') {
+        font-size: map.get($font-sizes, 'medium');
+    }
+}
+
+label {
+    font-family: $font-title;
+    font-weight: 600;
+    font-size: map.get($font-sizes, 'medium');
+
+    @include m.respond-to('tablet') {
+        font-size: map.get($font-sizes, 'small');
+    }
+}

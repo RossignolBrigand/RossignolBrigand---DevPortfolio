@@ -1,0 +1,12 @@
+{
+    "title": "Contact",
+    "mailBark": "Here's my e-mail!",
+    "formBark": "Or if you prefer a form : ",
+    "clipboard": "Copied to clipboard!",
+    "form": {
+        "name": "Name: ",
+        "email": "E-mail:",
+        "message": "Message",
+        "submit": "Submit"
+    }
+}

@@ -1,0 +1,71 @@
+@use '../../abstracts/mixins' as m;
+@use '../../abstracts/variables' as v;
+
+.skills-section {
+    background-color: v.$tertiary-color;
+    @include m.margin-bottom;
+    @include m.padding-standard;
+
+    .skills-container {
+        .skills-block {
+            margin-bottom: 1rem;
+            @include m.padding-standard;
+
+            &__content--list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+
+                @include m.respond-to('laptop') {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @include m.respond-to('tablet') {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+
+    .tools-container {
+        .tools-block {
+            display: grid;
+            padding: 1rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            &__content {
+                margin-bottom: 1rem;
+            }
+            &__content--list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+                gap: 2.5rem;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                svg {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    .learning-container {
+        padding: 1rem;
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+    }
+
+    li {
+        font-family: monospace;
+    }
+}
