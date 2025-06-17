@@ -23,6 +23,8 @@ export default function App() {
 					<Route path="about" element={<AboutPage />} />
 					<Route path="projects" element={<ProjectPage />} />
 					<Route path="contact" element={<ContactPage />} />
+					<Route path="blog" element={<BlogListPage />} />
+					<Route path="blog/:slug" element={<BlogPostPage />} />
 					<Route path="*" element={<ErrorPage />} />
 				</Route>
 			</Routes>

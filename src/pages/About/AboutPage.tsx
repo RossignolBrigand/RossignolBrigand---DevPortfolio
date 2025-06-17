@@ -1,5 +1,5 @@
-import Section from "@/components/ui/Section.tsx";
-import HeroSection from "@/components/content/HeroSection";
+import Section from "../../components/ui/Section/Section";
+import HeroSection from "../../components/content/Hero/HeroSection.tsx";
 function AboutPage() {
 	return (
 		<>
