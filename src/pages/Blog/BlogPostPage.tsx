@@ -1,15 +1,14 @@
-// src/pages/Blog/BlogPostPage.tsx
 import { useParams } from "react-router-dom";
-import { blogPosts } from "../../utils/loadBlogPosts";
+import { blogPosts } from "../../utils/loadBlogPosts.ts";
 
 export default function BlogPostPage() {
 	const { slug, lang } = useParams();
 	const post = blogPosts.find(
 		(p) => p.metadata.slug === slug && p.metadata.lang === lang
 	);
-	console.log("Rendering blog post:", post);
 
 	if (!post) return <p>Not found</p>;
+
 	const { metadata, Component } = post;
 
 	return (
