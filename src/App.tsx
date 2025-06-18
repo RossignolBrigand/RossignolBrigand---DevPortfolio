@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LocalizedLayout from "@/components/layout/LocalizedLayout";
+import LocalizedLayout from "@/components/layout/LocalizedLayout.tsx";
 import RedirectToPreferredLang from "@/components/routing/RedirectToPreferredLang";
 
 import HomePage from "@/pages/Home/HomePage.tsx";
